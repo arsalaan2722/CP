@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+#include <algorithm>  // For std::next_permutation
+using namespace std;
+
+int main() {
+    string str;
+    cout << "Enter a string: ";
+    cin >> str;
+
+    // Step 1: Sort the string to start from the first permutation
+    sort(str.begin(), str.end());
+
+    cout << "All permutations of \"" << str << "\":\n";
+
+    // Step 2: Use next_permutation in a loop until no more permutations exist
+    do {
+        cout << str << endl;
+    } while (next_permutation(str.begin(), str.end()));
+
+    return 0;
+}
