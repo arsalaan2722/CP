@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+// Function to print from N down to 1
+void printDown(int n) {
+    // 1. Base Case: Stop if n is 0 or less
+    if (n <= 0) {
+        return;
+    }
+
+    // 2. Print the current number
+    cout << n << " ";
+
+    // 3. Recursive Call: Do the same for the next smaller number (n - 1)
+    printDown(n - 1);
+}
+
+int main() {
+    int N;
+    cout << "Enter a number: ";
+    cin >> N;
+
+    printDown(N);
+    cout << endl;
+
+    return 0;
+}
