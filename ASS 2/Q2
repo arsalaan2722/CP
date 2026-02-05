@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Enter number of elements: ";
+    cin >> N;
+
+    int arr[1000];
+    cout << "Enter elements:\n";
+    for (int i = 0; i < N; i++) {
+        cin >> arr[i];
+    }
+
+    int maxAND = 0;
+
+    for (int i = 0; i < N; i++) {
+        for (int j = i + 1; j < N; j++) {
+            int andValue = arr[i] & arr[j];
+            if (andValue > maxAND) {
+                maxAND = andValue;
+            }
+        }
+    }
+
+    cout << "Maximum AND value of any pair: " << maxAND << endl;
+
+    return 0;
+}
